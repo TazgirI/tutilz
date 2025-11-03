@@ -133,6 +133,10 @@ dependencies {
     // For more info:
     // http://www.gradle.org/docs/current/userguide/artifact_dependencies_tutorial.html
     // http://www.gradle.org/docs/current/userguide/dependency_management.html
+
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.11.0'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.11.0'
+
 }
 
 // This block of code expands all declared replace properties in the specified resource targets.
@@ -198,4 +202,9 @@ tasks.register('copyToSurvivor', Copy) {
 // Make the copy task run after build
 tasks.named('build') {
     finalizedBy(tasks.named('copyToSurvivor'))
+}
+
+
+test {
+    useJUnitPlatform()
 }

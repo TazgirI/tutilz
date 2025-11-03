@@ -1,7 +1,7 @@
 package net.tazgirl.tutilz.events;
 
 import net.tazgirl.tutilz.NullThrow;
-import net.tazgirl.tutilz.events.event_priority_overrides.EventAccessor;
+import net.tazgirl.tutilz.events.priority_events.EventAccessor;
 
 import java.util.function.Consumer;
 
