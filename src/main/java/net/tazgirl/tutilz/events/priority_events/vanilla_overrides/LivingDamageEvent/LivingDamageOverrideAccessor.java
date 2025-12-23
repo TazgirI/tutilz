@@ -19,7 +19,7 @@ public abstract class LivingDamageOverrideAccessor extends EventAccessor<LivingD
     }
 
 
-    // finalDamage = the damage that will be done will all priority sorted events have been called
+    // finalDamage = the damage that will be done once all priority sorted events have been called
     protected float finalDamage;
 
     // baseDamage = the damage that was originally sent before any listeners received the event
