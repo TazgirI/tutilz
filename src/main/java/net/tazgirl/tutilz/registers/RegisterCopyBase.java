@@ -71,4 +71,9 @@ public class RegisterCopyBase
     {
         return register.toString();
     }
+
+    public static void ClearWholeRegisterDanger()
+    {
+        register.clear();
+    }
 }

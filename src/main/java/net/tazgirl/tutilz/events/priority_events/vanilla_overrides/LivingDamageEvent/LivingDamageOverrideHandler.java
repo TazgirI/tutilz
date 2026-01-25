@@ -15,6 +15,7 @@ public class LivingDamageOverrideHandler<T extends LivingDamageOverrideAccessor>
     {
         LivingDamageOverrideAccessor.Pre accessor = ProcessPreEvent(event, LivingDamageOverride.FirePre());
 
+
         event.setNewDamage(accessor.finalDamage);
 
     }

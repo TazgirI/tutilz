@@ -28,6 +28,8 @@ public abstract class LivingDamageOverrideAccessor extends EventAccessor<LivingD
     // baseDamageModifier = a modifier used for any upgrades that want to apply modifications to the base damage while preserving the original amount.
     protected float baseDamageModifier = 0;
 
+    public boolean cancelled = false;
+
     // i.e if your event increases final damage by 5% of base damage, but you wanted that to synergise with an upgrade that grants +1 base damage
     // then you would do `eventAccessor.addFinalDamage(eventAccessor.getModifiedBaseDamage * 0.05)` while making sure you have a high priority number
     // so it occurs after any base damage modifiers
@@ -98,6 +100,10 @@ public abstract class LivingDamageOverrideAccessor extends EventAccessor<LivingD
         {
             baseDamageModifier += amount;
         }
+
+        public boolean isCancelled(){return cancelled;}
+
+        public void setCancelled(){cancelled = true;}
     }
 
     public static class Post extends LivingDamageOverrideAccessor

@@ -1,0 +1,1 @@
+Weight pick function, takes List<T> and Function<T, Number>
