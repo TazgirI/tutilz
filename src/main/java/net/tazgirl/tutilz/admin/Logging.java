@@ -7,6 +7,7 @@ import org.jetbrains.annotations.NotNull;
 import org.slf4j.Logger;
 
 import javax.annotation.Nullable;
+import java.util.List;
 
 public class Logging
 {
@@ -18,9 +19,19 @@ public class Logging
         logCheck(callerLogger).info(message);
     }
 
+    public static void Log(@NotNull String message, @Nullable Logger callerLogger, List<Object> quickDump)
+    {
+        logCheck(callerLogger).info(message + "\n Variable dump: " + quickDump.toString());
+    }
+
     public static void Warn(@NotNull String message, @Nullable Logger callerLogger)
     {
         logCheck(callerLogger).warn(message);
+    }
+
+    public static void Warn(@NotNull String message, @Nullable Logger callerLogger, List<Object> quickDump)
+    {
+        logCheck(callerLogger).warn(message + "\n Variable dump: " + quickDump.toString());
     }
 
     public static void Error(@NotNull String message, @Nullable Logger callerLogger)
@@ -28,9 +39,19 @@ public class Logging
         logCheck(callerLogger).error(message);
     }
 
+    public static void Error(@NotNull String message, @Nullable Logger callerLogger, List<Object> quickDump)
+    {
+        logCheck(callerLogger).error(message + "\n Variable dump: " + quickDump.toString());
+    }
+
     public static void Debug(@NotNull String message, @Nullable Logger callerLogger)
     {
         logCheck(callerLogger).debug(message);
+    }
+
+    public static void Debug(@NotNull String message, @Nullable Logger callerLogger, List<Object> quickDump)
+    {
+        logCheck(callerLogger).debug(message + "\n Variable dump: " + quickDump.toString());
     }
 
     public static void LogAndTell(@NotNull String message, @Nullable Logger callerLogger)
